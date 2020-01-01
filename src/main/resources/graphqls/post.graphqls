@@ -1,0 +1,17 @@
+type Author {
+    id: ID!,
+    name: String,
+}
+
+type Post {
+    id: ID!,
+    tittle: String,
+    category: String
+    author: Author
+}
+type Query {
+    getPost(count: Int,offset:Int):[Post]
+}
+type Mutation {
+    createPost(tittle: String!, category: String!):Post
+}
