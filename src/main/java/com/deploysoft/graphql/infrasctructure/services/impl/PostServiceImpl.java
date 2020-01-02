@@ -4,6 +4,7 @@ import com.deploysoft.graphql.infrasctructure.repository.IPostRepository;
 import com.deploysoft.graphql.infrasctructure.repository.entity.Post;
 import com.deploysoft.graphql.infrasctructure.services.IPostService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.List;
@@ -19,8 +20,9 @@ public class PostServiceImpl implements IPostService {
     }
 
     @Override
+    @Transactional
     public Post createPost(Post post) {
-        return this.iPostRepository.save(post);
+        return this.iPostRepository.saveAndFlush(post);
     }
 
     @Override
@@ -30,6 +32,6 @@ public class PostServiceImpl implements IPostService {
 
     @Override
     public List<Post> getPosts() {
-        return Collections.emptyList();
+        return this.iPostRepository.findAll();
     }
 }

@@ -11,5 +11,5 @@ public class PostDTO {
     private Long id;
     private String tittle;
     private String category;
-    private AuthorDTO authorId;
+    private int authorId;
 }

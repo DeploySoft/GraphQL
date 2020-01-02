@@ -1,6 +1,7 @@
 type Author {
     id: ID!,
     name: String,
+    posts: [Post]!
 }
 
 type Post {
@@ -10,8 +11,8 @@ type Post {
     author: Author
 }
 type Query {
-    getPost(count: Int,offset:Int):[Post]
+    getPost(count: Int!,offset:Int!):[Post]
 }
 type Mutation {
-    createPost(tittle: String!, category: String!):Post
+    createPost(tittle: String!, category: String!,author:Int!):Post
 }

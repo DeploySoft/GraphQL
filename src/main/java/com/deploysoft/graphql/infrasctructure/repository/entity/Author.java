@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -14,10 +15,11 @@ import java.io.Serializable;
 @Data
 public class Author implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 
-    @OneToOne(mappedBy = "author")
-    private Post post;
+    @OneToMany(mappedBy = "author")
+    private List<Post> posts;
+
 }
