@@ -1,0 +1,12 @@
+query {
+    getPost(count: 1,offset : 1)
+    {
+        id,
+        tittle,
+        category,
+        author {
+            id,
+            name
+        }
+    }
+}

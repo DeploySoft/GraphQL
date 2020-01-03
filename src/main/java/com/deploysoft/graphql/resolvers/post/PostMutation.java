@@ -16,7 +16,7 @@ public class PostMutation implements GraphQLMutationResolver {
         this.iPostService = iPostService;
     }
 
-
+    //TODO here I should receipt a DTO to parse entity and don't expose the real domain
     public Post createPost(String title, String category, int author) {
         Post post = new Post();
         post.setTittle(title);

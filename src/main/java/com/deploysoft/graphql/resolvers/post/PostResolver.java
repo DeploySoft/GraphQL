@@ -10,6 +10,6 @@ public class PostResolver implements GraphQLResolver<Post> {
 
     public Author getAuthor(Post post) {
         //TODO Here I should add a service, repository or anything else that allows me search the Author
-        return new Author((long) 1, "test desde aca", null);
+        return new Author((long) 1, "HERE", null);
     }
 }
